@@ -1,4 +1,8 @@
+[!Missing Adblocker plugin banner](/assets/banner-1544x500.png)
+
 # Detect Missing Adblocker
+
+WordPreess plugin that lets you Warn your website's visitors if they don't have an adblocker enabled.
 
 ## Development
 
