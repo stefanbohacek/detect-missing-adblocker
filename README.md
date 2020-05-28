@@ -1,4 +1,4 @@
-[!Missing Adblocker plugin banner](/assets/banner-1544x500.png)
+[!Missing Adblocker plugin banner](assets/banner-1544x500.png)
 
 # Detect Missing Adblocker
 
