@@ -2,7 +2,7 @@
 
 # Detect Missing Adblocker
 
-WordPreess plugin that lets you Warn your website's visitors if they don't have an adblocker enabled.
+WordPreess plugin that lets you warn your website's visitors if they don't have an adblocker enabled.
 
 ## Development
 
