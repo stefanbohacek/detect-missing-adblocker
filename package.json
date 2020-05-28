@@ -1,0 +1,27 @@
+{
+  "name": "ftf-detect-missing-adblocker",
+  "version": "1.0.0",
+  "description": "Warn your website's visitors if they don't have an ad-blocking browser extension installed.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stefan Bohacek",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "autoprefixer": "^9.8.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "extract-loader": "^5.1.0",
+    "file-loader": "^6.0.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
