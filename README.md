@@ -1,8 +1,4 @@
-![Missing Adblocker plugin banner](https://raw.githubusercontent.com/fourtonfish/detect-missing-adblocker/master/assets/banner-1544x500.png)
-
 # Detect Missing Adblocker
-
-WordPreess plugin that lets you warn your website's visitors if they don't have an adblocker enabled.
 
 ## Development
 

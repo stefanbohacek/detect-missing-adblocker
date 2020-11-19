@@ -5,12 +5,12 @@ module.exports = {
   entry: {
     dfp: './src/scripts/dfp.js',
     detect: './src/scripts/detect.js',
-    ads: './src/scripts/ads.js',
+    xads: './src/scripts/xads.js',
     styles: './src/styles/styles.scss'
   },
   output: {
     path: path.resolve( __dirname, 'dist/js' ),
-    filename: '[name].min.js'
+    filename: '[name].js'
   },
   module: {
     rules: [

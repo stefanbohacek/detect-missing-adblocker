@@ -3,7 +3,7 @@ Contributors: fourtonfish
 Donate link: https://paypal.me/stefanbohacek
 Tags: adblock, ads
 Requires at least: 4.7
-Tested up to: 5.4.1
+Tested up to: 5.5.3
 Stable tag: trunk
 Requires PHP: 7.0
 License: GPLv3
@@ -34,3 +34,6 @@ To discourage using this plugin for the opposite purpose, the links to popular a
 
 = 1.0 =
 * Initial release.
+
+= 1.0.1 =
+* Updated ad detection.

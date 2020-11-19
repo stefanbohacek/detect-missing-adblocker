@@ -2,7 +2,7 @@
 /*
     Plugin Name: Detect Missing Adblocker
     Description: Warn your website's visitors if they don't have an adblocker enabled.
-    Version:     1.0
+    Version:     1.0.1
     Author:      Stefan Bohacek
 */
 
@@ -44,12 +44,12 @@ class FTF_Detect_Missing_Adblocker {
   }
 
   function enqueue_scripts_and_styles(){
-    $js_file_path = plugin_dir_path( __FILE__ ) . 'dist/js/dfp.min.js';
-    wp_register_script( 'ftf-dma-fake-ad', plugin_dir_url( __FILE__ ) . 'dist/js/dfp.min.js', array(), filemtime( $js_file_path ));
+    $js_file_path = plugin_dir_path( __FILE__ ) . 'dist/js/xads.js';
+    wp_register_script( 'ftf-dma-fake-ad', plugin_dir_url( __FILE__ ) . 'dist/js/xads.js', array(), filemtime( $js_file_path ));
     wp_enqueue_script( 'ftf-dma-fake-ad' );
 
-    $js_file_path = plugin_dir_path( __FILE__ ) . 'dist/js/detect.min.js';
-    wp_register_script( 'ftf-dma-detect-script', plugin_dir_url( __FILE__ ) . 'dist/js/detect.min.js', array(), filemtime( $js_file_path ));
+    $js_file_path = plugin_dir_path( __FILE__ ) . 'dist/js/detect.js';
+    wp_register_script( 'ftf-dma-detect-script', plugin_dir_url( __FILE__ ) . 'dist/js/detect.js', array(), filemtime( $js_file_path ));
     wp_enqueue_script( 'ftf-dma-detect-script' );
 
     $style = get_option( 'ftf_detect_missing_adblocker_style', 'basic' );

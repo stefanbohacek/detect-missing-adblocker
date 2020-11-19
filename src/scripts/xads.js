@@ -8,7 +8,7 @@ function ready( fn ) {
 
 ready( function(){
   const e = document.createElement( 'div' );
-  e.id = 'ftf-detect-missing-adblocker';
+  e.id = 'ftf-dma-target';
   e.style.display = 'none';
   document.body.appendChild( e );
 } );
