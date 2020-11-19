@@ -1,3 +1,5 @@
+![Missing adblocker plugin thumbnail](./assets/banner-1544x500.png)
+
 # Detect Missing Adblocker
 
 ## Development
