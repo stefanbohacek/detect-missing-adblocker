@@ -5,7 +5,7 @@ module.exports = {
   entry: {
     dfp: './src/scripts/dfp.js',
     detect: './src/scripts/detect.js',
-    xads: './src/scripts/xads.js',
+    adblocker: './src/scripts/adblocker.js',
     styles: './src/styles/styles.scss'
   },
   output: {
