@@ -40,3 +40,9 @@ To discourage using this plugin for the opposite purpose, the links to popular a
 
 = 1.0.2 =
 * Updated ad detection.
+
+= 1.0.3 =
+* Updated ad detection.
+
+= 1.0.4 =
+* Minor style updates.

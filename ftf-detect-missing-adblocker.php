@@ -2,7 +2,7 @@
 /*
     Plugin Name: Detect Missing Adblocker
     Description: Warn your website's visitors if they don't have an adblocker enabled.
-    Version:     1.0.2
+    Version:     1.0.4
     Author:      Stefan Bohacek
 */
 
