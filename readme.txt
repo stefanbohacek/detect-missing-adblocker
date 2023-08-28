@@ -15,15 +15,13 @@ Warn your website's visitors if they don't have an adblocker enabled.
 
 Provide a more secure experience to your website's visitors by notifying them if they're not using an ad-blocking browser extension. 
 
+[Learn more](https://stefanbohacek.com/project/detect-missing-adblocker-wordpress-plugin/) | [View source](https://github.com/stefanbohacek/detect-missing-adblocker)
+
 == Frequently Asked Questions ==
 
 = Can I customize the message shown to my website's visitors? =
 
-Yes, you can update the title and the message in the plugin's settings.
-
-= Can I customize the links shown to my website's visitors? =
-
-To discourage using this plugin for the opposite purpose, the links to popular adblockers can not be removed or modified. Feel free to reach out via stefan@stefanbohacek.com with more suggestions.
+Yes, you can update the title and the message in the plugin's settings. Be sure to include some recommended plugins!
 
 == Screenshots ==
 
@@ -46,3 +44,9 @@ To discourage using this plugin for the opposite purpose, the links to popular a
 
 = 1.0.4 =
 * Minor style updates.
+
+= 1.1.0 =
+* Allow full customization of the message shown to site visitors.
+
+= 1.1.1 =
+* Updated ad detection.

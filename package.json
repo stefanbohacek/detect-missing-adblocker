@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "build": ". ~/.nvm/nvm.sh && nvm use 10 && webpack",
-    "watch": ". ~/.nvm/nvm.sh && nvm use 10 && webpack --watch"
-  },  
+    "build": ". ~/.nvm/nvm.sh && nvm use 12 && webpack",
+    "watch": ". ~/.nvm/nvm.sh && nvm use 12 && webpack --watch"
+  },
   "author": "Stefan Bohacek",
   "license": "ISC",
   "devDependencies": {

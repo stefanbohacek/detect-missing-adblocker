@@ -1,8 +1,8 @@
 <?php
 /*
     Plugin Name: Detect Missing Adblocker
-    Description: Warn your website's visitors if they don't have an adblocker enabled.
-    Version:     1.0.4
+    Description: Warn your website's visitors if they don't have an ad-blocker enabled.
+    Version:     1.1.1
     Author:      Stefan Bohacek
 */
 
@@ -18,34 +18,6 @@ class FTF_Detect_Missing_Adblocker {
     add_filter( 'plugin_action_links_ftf-detect-missing-adblocker/ftf-detect-missing-adblocker.php', array( $this, 'settings_page_link' ) );
   }
 
-  function get_resources( $type = 'desktop' ){
-    if ( $type === 'mobile' ){
-      $links = array(
-        array(
-          'title' => 'AdBlock',
-          'url' => 'https://help.getadblock.com/support/solutions/articles/6000152717-how-can-i-block-ads-on-my-mobile-device-'
-        )
-      );
-    } elseif ( $type === 'desktop' ) {
-      $links = array(
-        array(
-          'title' => 'uBlock Origin',
-          'url' => 'https://github.com/gorhill/uBlock#installation'
-        ),
-        array(
-          'title' => 'AdBlock',
-          'url' => 'https://getadblock.com/'
-        ),
-        array(
-          'title' => 'Ghostery',
-          'url' => 'https://www.ghostery.com/'
-        )
-      );
-    }
-
-    return $links;
-  }
-
   function enqueue_scripts_and_styles(){
     $js_file_path = plugin_dir_path( __FILE__ ) . 'dist/js/detect.js';
     wp_register_script( 'ftf-dma-detect-script', plugin_dir_url( __FILE__ ) . 'dist/js/detect.js', array(), filemtime( $js_file_path ));
@@ -54,8 +26,8 @@ class FTF_Detect_Missing_Adblocker {
     $style = get_option( 'ftf_detect_missing_adblocker_style', 'basic' );
 
     if ( empty( $style ) || $style === 'basic' ){
-      $css_file_path = plugin_dir_path( __FILE__ ) . 'dist/css/styles.min.css';
-      wp_register_style( 'ftf-dma-styles', plugin_dir_url( __FILE__ ) . 'dist/css/styles.min.css', array(), filemtime( $css_file_path ), 'all' );
+      $css_file_path = plugin_dir_path( __FILE__ ) . 'dist/css/nativeads.js.min.css';
+      wp_register_style( 'ftf-dma-styles', plugin_dir_url( __FILE__ ) . 'dist/css/nativeads.js.min.css', array(), filemtime( $css_file_path ), 'all' );
       wp_enqueue_style( 'ftf-dma-styles' );
     }
   }
@@ -74,13 +46,12 @@ class FTF_Detect_Missing_Adblocker {
     $custom_note_header = get_option( 'ftf_detect_missing_adblocker_custom_note_header' );
     $custom_note = html_entity_decode( get_option( 'ftf_detect_missing_adblocker_custom_note' ) );
 
-    $default_note_header = 'Adblocker not detected';
-
-    if ( $is_mobile ){
-      $default_note = '<p>Consider installing a browser extension that blocks ads and other malicious scripts in your browser to protect your privacy and security.</p>';
-    } else {
-      $default_note = '<p>Consider installing a browser extension that blocks ads and other malicious scripts in your browser to protect your privacy and security.</p>';
-    }
+    $default_note_header = 'Ad-blocker not detected';
+    $default_note = <<<HTML
+    <p>
+      Consider installing a browser extension that blocks ads and other malicious scripts in your browser to protect your privacy and security. <a href="https://stefanbohacek.com/project/detect-missing-adblocker-wordpress-plugin/#resources" target="_blank">Learn more.</a>
+    </p>
+    HTML;
 
     if ( !empty( $custom_note_header ) ){
       $custom_note_header = $custom_note_header;
@@ -94,8 +65,13 @@ class FTF_Detect_Missing_Adblocker {
       $note_content = $default_note;
     }
 
-    $links = self::get_resources( $is_mobile ? 'mobile' : 'desktop' );
     ?>
+    <style>
+      .ftf-dma-note {
+          display: none;
+          pointer-events: none;
+      }
+    </style>
     <div id="ftf-dma-note" class="ftf-dma-note d-none ytd-j yxd-j yxd-jd aff-content-col aff-inner-col aff-item-list ark-ad-message inplayer-ad inplayer_banners in_stream_banner trafficjunky-float-right dbanner preroll-blocker happy-inside-player blocker-notice blocker-overlay exo-horizontal ave-pl bottom-hor-block brs-block advboxemb wgAdBlockMessage glx-watermark-container overlay-advertising-new header-menu-bottom-ads rkads mdp-deblocker-wrapper amp-ad-inner imggif bloc-pub bloc-pub2 hor_banner aan_fake aan_fake__video-units rps_player_ads fints-block__row full-ave-pl full-bns-block vertbars video-brs player-bns-block wps-player__happy-inside gallery-bns-bl stream-item-widget adsbyrunactive happy-under-player adde_modal_detector adde_modal-overlay ninja-recommend-block aoa_overlay message">
       <div class="ftf-dma-note-content-wrapper">
         <span onclick="" id="ftf-dma-close-btn" class="ftf-dma-close-btn">Close</span>
@@ -103,21 +79,14 @@ class FTF_Detect_Missing_Adblocker {
           <p><?php echo $custom_note_header;?></p>
         </div>
         <div class="ftf-dma-note-content"><?php echo wpautop( $note_content ); ?></div>
-        <ul><?php
-        foreach ( $links as $link ) { ?>
-          <li>
-            <a href="<?php echo $link['url']; ?>" target="_blank"><?php echo $link['title']; ?></a>
-          </li>
-        <?php }
-        ?></ul>
       </div>
     </div>
   <?php }
 
   function add_settings_page(){
     add_options_page(
-      'Detect Missing Adblocker',
-      'Missing Adblocker',
+      'Detect Missing Ad-blocker',
+      'Missing Ad-blocker',
       'manage_options',
       'ftf-detect-missing-adblocker',
       array( $this, 'render_settings_page' )
@@ -127,7 +96,7 @@ class FTF_Detect_Missing_Adblocker {
   function render_settings_page(){
     ?>
     <div class="wrap">
-      <h1>Detect Missing Adblocker</h1>
+      <h1>Detect Missing Ad-blocker</h1>
 
       <form action='options.php' method='post' >
         <?php
@@ -156,11 +125,11 @@ class FTF_Detect_Missing_Adblocker {
 
   function render_settings_form(){
     $style = get_option( 'ftf_detect_missing_adblocker_style' );
-    $custom_note_header = get_option( 'ftf_detect_missing_adblocker_custom_note_header' );
+    $custom_note_header = get_option( 'ftf_detect_missing_adblocker_custom_note_header', 'Ad-blocker not detected' );
     $custom_note = html_entity_decode( get_option( 'ftf_detect_missing_adblocker_custom_note' ) );
     $show_on_mobile = get_option( 'ftf_detect_missing_adblocker_show_on_mobile' );
     ?>
-    <p>If it appears that your site's visitor is not using an adblocker, a note will be shown at the bottom of the page.</p>
+    <p>If it appears that your site's visitor is not using an ad-blocker, a note will be shown at the bottom of the page.</p>
     <h3>Style</h3>
     <p>Choose from available styles:</p>
     <select name="ftf_detect_missing_adblocker_style">
@@ -173,9 +142,9 @@ class FTF_Detect_Missing_Adblocker {
       <li><strong>None</strong>: no styling will be applied</li>
       <!-- <li><strong>Bootstrap 4.4</strong>: classes from <a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/">Bootstrap 4.4</a> will be used</li> -->
     </ul>
-    <h3>Custom Note</h3>
-    <p>Customize the note shown to your website's visitors if an adblocker is not being used. Links to resources will be automatically appended at the end.</p>
-    <input type="text" name="ftf_detect_missing_adblocker_custom_note_header" value="<?php echo $custom_note_header;?>" placeholder="Custom title text" style="width: 100%;">
+    <h3>Visitor note</h3>
+    <p>Customize the note shown to your website's visitors if an ad-blocker is not being used.</p>
+    <input type="text" name="ftf_detect_missing_adblocker_custom_note_header" value="<?php echo $custom_note_header;?>" placeholder="Ad-blocker not detected" style="width: 100%;">
     <?php
       wp_editor( $custom_note, 'ftf_detect_missing_adblocker_custom_note', array(
           'wpautop'       => true,
@@ -190,30 +159,24 @@ class FTF_Detect_Missing_Adblocker {
       <input type="checkbox" name="ftf_detect_missing_adblocker_show_on_mobile" <?php checked( $show_on_mobile, 'on' ) ?>>
       Show the warning to people using a mobile device.
     </label>
-    <h3>Resources</h3>
-    <p>These are the resources shown to your visitors. Please reach out to <a href="mailto:stefan@stefanbohacek.com?subject=RE: Detect Missing Adblocker" target="_blank">stefan@stefanbohacek.com</a> with suggestions.</p>
-    <p><strong>Desktop</strong></p>
-    <ul class="ul-disc"><?php
-    $links = self::get_resources( 'desktop' );
-
-    foreach ( $links as $link ) { ?>
+    <h3>About</h3>
+    <ul class="ul-disc">
       <li>
-        <a href="<?php echo $link['url']; ?>" target="_blank"><?php echo $link['title']; ?></a>
+        <a href="https://stefanbohacek.com/project/detect-missing-adblocker-wordpress-plugin/">
+          About the plugin
+        </a>
       </li>
-    <?php }
-
-    ?></ul>
-
-    <p><strong>Mobile (if enabled)</strong></p>
-    <ul class="ul-disc"><?php
-    $links = self::get_resources( 'mobile' );
-
-    foreach ( $links as $link ) { ?>
       <li>
-        <a href="<?php echo $link['url']; ?>" target="_blank"><?php echo $link['title']; ?></a>
+        <a href="https://github.com/stefanbohacek/detect-missing-adblocker">
+          View source
+        </a>
       </li>
-    <?php }
-    ?></ul>
+      <li>
+        <a href="https://stefanbohacek.com/contact/">
+          Contact author
+        </a>
+      </li>
+    </ul>
   <?php }
 
   function settings_page_link( $links ){
