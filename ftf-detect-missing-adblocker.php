@@ -12,6 +12,9 @@ class FTF_Detect_Missing_Adblocker {
     add_action( 'wp_footer', array( $this, 'show_note' ) );
     add_action( 'admin_init', array( $this, 'settings_init' ) );
     add_action( 'admin_menu', array( $this, 'add_settings_page' ) );
+    add_filter('plugin_action_links_ftf-detect-missing-adblocker.php', array($this, 'settings_page_link'));
+    add_filter('plugin_action_links_' . plugin_basename(__FILE__), array($this, 'settings_page_link'));
+
     add_filter( 'plugin_action_links_ftf-detect-missing-adblocker/ftf-detect-missing-adblocker.php', array( $this, 'settings_page_link' ) );
   }
 
@@ -44,10 +47,6 @@ class FTF_Detect_Missing_Adblocker {
   }
 
   function enqueue_scripts_and_styles(){
-    $js_file_path = plugin_dir_path( __FILE__ ) . 'dist/js/adblocker.js';
-    wp_register_script( 'ftf-dma-fake-ad', plugin_dir_url( __FILE__ ) . 'dist/js/adblocker.js', array(), filemtime( $js_file_path ));
-    wp_enqueue_script( 'ftf-dma-fake-ad' );
-
     $js_file_path = plugin_dir_path( __FILE__ ) . 'dist/js/detect.js';
     wp_register_script( 'ftf-dma-detect-script', plugin_dir_url( __FILE__ ) . 'dist/js/detect.js', array(), filemtime( $js_file_path ));
     wp_enqueue_script( 'ftf-dma-detect-script' );
@@ -72,7 +71,7 @@ class FTF_Detect_Missing_Adblocker {
     }
 
     $style = get_option( 'ftf_detect_missing_adblocker_style', 'basic' );
-    $custom_note_header = get_option( 'ftf_detect_missing_adblocker_custom_note_header', 'basic' );
+    $custom_note_header = get_option( 'ftf_detect_missing_adblocker_custom_note_header' );
     $custom_note = html_entity_decode( get_option( 'ftf_detect_missing_adblocker_custom_note' ) );
 
     $default_note_header = 'Adblocker not detected';
@@ -97,7 +96,7 @@ class FTF_Detect_Missing_Adblocker {
 
     $links = self::get_resources( $is_mobile ? 'mobile' : 'desktop' );
     ?>
-    <div id="ftf-dma-note" class="ftf-dma-note">
+    <div id="ftf-dma-note" class="ftf-dma-note d-none ytd-j yxd-j yxd-jd aff-content-col aff-inner-col aff-item-list ark-ad-message inplayer-ad inplayer_banners in_stream_banner trafficjunky-float-right dbanner preroll-blocker happy-inside-player blocker-notice blocker-overlay exo-horizontal ave-pl bottom-hor-block brs-block advboxemb wgAdBlockMessage glx-watermark-container overlay-advertising-new header-menu-bottom-ads rkads mdp-deblocker-wrapper amp-ad-inner imggif bloc-pub bloc-pub2 hor_banner aan_fake aan_fake__video-units rps_player_ads fints-block__row full-ave-pl full-bns-block vertbars video-brs player-bns-block wps-player__happy-inside gallery-bns-bl stream-item-widget adsbyrunactive happy-under-player adde_modal_detector adde_modal-overlay ninja-recommend-block aoa_overlay message">
       <div class="ftf-dma-note-content-wrapper">
         <span onclick="" id="ftf-dma-close-btn" class="ftf-dma-close-btn">Close</span>
         <div class="ftf-dma-note-header">
@@ -189,10 +188,10 @@ class FTF_Detect_Missing_Adblocker {
     <h3>Show on Mobile</h3>
     <label>
       <input type="checkbox" name="ftf_detect_missing_adblocker_show_on_mobile" <?php checked( $show_on_mobile, 'on' ) ?>>
-      Show the warning for people using mobile devices.
+      Show the warning to people using a mobile device.
     </label>
     <h3>Resources</h3>
-    <p>These are the resources shown to your visitors. Please reach out to <a href="mailto:stefan@fourtonfish.com?subject=RE: Detect Missing Adblocker" target="_blank">stefan@fourtonfish.com</a> with suggestions.</p>
+    <p>These are the resources shown to your visitors. Please reach out to <a href="mailto:stefan@stefanbohacek.com?subject=RE: Detect Missing Adblocker" target="_blank">stefan@stefanbohacek.com</a> with suggestions.</p>
     <p><strong>Desktop</strong></p>
     <ul class="ul-disc"><?php
     $links = self::get_resources( 'desktop' );

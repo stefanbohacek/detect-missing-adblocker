@@ -3,7 +3,7 @@ Contributors: fourtonfish
 Donate link: https://paypal.me/stefanbohacek
 Tags: adblock, ads
 Requires at least: 4.7
-Tested up to: 5.5.3
+Tested up to: 6.2.2
 Stable tag: trunk
 Requires PHP: 7.0
 License: GPLv3
@@ -23,7 +23,7 @@ Yes, you can update the title and the message in the plugin's settings.
 
 = Can I customize the links shown to my website's visitors? =
 
-To discourage using this plugin for the opposite purpose, the links to popular adblockers can not be removed or modified. Feel free to reach out via stefan@fourtonfish.com with more suggestions.
+To discourage using this plugin for the opposite purpose, the links to popular adblockers can not be removed or modified. Feel free to reach out via stefan@stefanbohacek.com with more suggestions.
 
 == Screenshots ==
 
@@ -36,4 +36,7 @@ To discourage using this plugin for the opposite purpose, the links to popular a
 * Initial release.
 
 = 1.0.1 =
+* Updated ad detection.
+
+= 1.0.2 =
 * Updated ad detection.

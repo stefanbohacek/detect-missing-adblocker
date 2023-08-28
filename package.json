@@ -4,10 +4,10 @@
   "description": "Warn your website's visitors if they don't have an ad-blocking browser extension installed.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "start": "node server.js",
+    "build": ". ~/.nvm/nvm.sh && nvm use 10 && webpack",
+    "watch": ". ~/.nvm/nvm.sh && nvm use 10 && webpack --watch"
+  },  
   "author": "Stefan Bohacek",
   "license": "ISC",
   "devDependencies": {

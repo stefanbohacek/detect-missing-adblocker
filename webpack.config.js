@@ -3,9 +3,7 @@ const path = require( 'path' );
 module.exports = {
   mode: 'production',
   entry: {
-    dfp: './src/scripts/dfp.js',
     detect: './src/scripts/detect.js',
-    adblocker: './src/scripts/adblocker.js',
     styles: './src/styles/styles.scss'
   },
   output: {
