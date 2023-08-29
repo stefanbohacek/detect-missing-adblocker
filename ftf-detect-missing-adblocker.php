@@ -2,7 +2,7 @@
 /*
     Plugin Name: Detect Missing Adblocker
     Description: Warn your website's visitors if they don't have an ad-blocker enabled.
-    Version:     1.1.2
+    Version:     1.1.3
     Author:      Stefan Bohacek
 */
 
@@ -26,10 +26,14 @@ class FTF_Detect_Missing_Adblocker {
     $style = get_option( 'ftf_detect_missing_adblocker_style', 'basic' );
 
     if ( empty( $style ) || $style === 'basic' ){
-      $css_file_path = plugin_dir_path( __FILE__ ) . 'dist/css/nativeads.js.min.css';
-      wp_register_style( 'ftf-dma-styles', plugin_dir_url( __FILE__ ) . 'dist/css/nativeads.js.min.css', array(), filemtime( $css_file_path ), 'all' );
+      $css_file_path = plugin_dir_path( __FILE__ ) . 'dist/css/styles.min.css';
+      wp_register_style( 'ftf-dma-styles', plugin_dir_url( __FILE__ ) . 'dist/css/styles.min.css', array(), filemtime( $css_file_path ), 'all' );
       wp_enqueue_style( 'ftf-dma-styles' );
     }
+
+    $css_file_path = plugin_dir_path( __FILE__ ) . 'dist/css/nativeads.js.min.css';
+    wp_register_style( 'ftf-dma-nativeads-styles', plugin_dir_url( __FILE__ ) . 'dist/css/nativeads.js.min.css', array(), filemtime( $css_file_path ), 'all' );
+    wp_enqueue_style( 'ftf-dma-nativeads-styles' );
   }
 
   function show_note(){

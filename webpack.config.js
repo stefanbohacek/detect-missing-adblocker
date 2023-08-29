@@ -4,7 +4,8 @@ module.exports = {
   mode: 'production',
   entry: {
     detect: './src/scripts/detect.js',
-    styles: './src/styles/nativeads.js.scss'
+    styles: './src/styles/styles.scss',
+    adstyles: './src/styles/nativeads.js.scss'
   },
   output: {
     path: path.resolve( __dirname, 'dist/js' ),
