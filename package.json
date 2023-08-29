@@ -5,6 +5,9 @@
   "description": "Warn your website's visitors if they don't have an ad-blocking browser extension installed.",
   "license": "ISC",
   "private": true,
+  "engines": {
+    "node": ">=12 <13"
+  },
   "scripts": {
     "build": ". ~/.nvm/nvm.sh && nvm use 12 && webpack",
     "start": "npm run build",
