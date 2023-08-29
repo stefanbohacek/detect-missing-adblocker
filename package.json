@@ -1,6 +1,6 @@
 {
   "name": "ftf-detect-missing-adblocker",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "author": "Stefan Bohacek",
   "description": "Warn your website's visitors if they don't have an ad-blocking browser extension installed.",
   "license": "ISC",
