@@ -36,6 +36,7 @@
     "lint": "run-s lint:*",
     "lint:prettier": "prettier --check .",
     "lint:style": "stylelint \"src/**/*.scss\"",
+    "release": "commit-and-tag-version",
     "start": "npm run build",
     "watch": "webpack --watch"
   },
@@ -47,6 +48,7 @@
     "@commitlint/format": "^17.4.4",
     "autoprefixer": "^9.8.0",
     "babel-loader": "^8.1.0",
+    "commit-and-tag-version": "^11.2.3",
     "css-loader": "^3.5.3",
     "extract-loader": "^4.0.3",
     "file-loader": "^6.0.0",
@@ -75,5 +77,10 @@
     "singleQuote": true,
     "arrowParens": "avoid",
     "trailingComma": "all"
+  },
+  "commit-and-tag-version": {
+    "scripts": {
+      "postchangelog": "npm run format:prettier"
+    }
   }
 }
