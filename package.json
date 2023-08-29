@@ -11,8 +11,12 @@
   },
   "scripts": {
     "build": "webpack",
-    "format": "prettier --write .",
-    "lint": "prettier --check .",
+    "format": "run-s format:*",
+    "format:prettier": "prettier --write .",
+    "format:style": "stylelint \"src/**/*.scss\" --fix",
+    "lint": "run-s lint:*",
+    "lint:prettier": "prettier --check .",
+    "lint:style": "stylelint \"src/**/*.scss\"",
     "start": "npm run build",
     "watch": "webpack --watch"
   },
@@ -24,12 +28,25 @@
     "css-loader": "^3.5.3",
     "extract-loader": "^4.0.3",
     "file-loader": "^6.0.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.0.3",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-order": "^6.0.3",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard-scss",
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+      "order/properties-alphabetical-order": true
+    }
   },
   "prettier": {
     "printWidth": 100,
