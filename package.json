@@ -9,6 +9,25 @@
     "node": "<=18.17.1 >16",
     "npm": ">=9"
   },
+  "keywords": [
+    "adblock",
+    "ads"
+  ],
+  "contributors": [
+    "fourtonfish"
+  ],
+  "homepage": "https://stefanbohacek.com/project/detect-missing-adblocker-wordpress-plugin/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefanbohacek/detect-missing-adblocker"
+  },
+  "bugs": {
+    "url": "https://github.com/stefanbohacek/detect-missing-adblocker/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://paypal.me/stefanbohacek"
+  },
   "scripts": {
     "build": "webpack",
     "format": "run-s format:*",
