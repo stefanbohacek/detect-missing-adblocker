@@ -2,7 +2,6 @@
   "name": "ftf-detect-missing-adblocker",
   "version": "1.0.0",
   "description": "Warn your website's visitors if they don't have an ad-blocking browser extension installed.",
-  "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "build": ". ~/.nvm/nvm.sh && nvm use 12 && webpack",
