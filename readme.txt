@@ -50,3 +50,6 @@ Yes, you can update the title and the message in the plugin's settings. Be sure 
 
 = 1.1.1 =
 * Updated ad detection.
+
+= 1.1.2 =
+* Fixed pointer-events value.
