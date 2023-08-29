@@ -11,6 +11,8 @@
   },
   "scripts": {
     "build": "webpack",
+    "format": "prettier --write .",
+    "lint": "prettier --check .",
     "start": "npm run build",
     "watch": "webpack --watch"
   },
@@ -22,10 +24,17 @@
     "css-loader": "^3.5.3",
     "extract-loader": "^4.0.3",
     "file-loader": "^6.0.0",
+    "prettier": "^3.0.3",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "arrowParens": "avoid",
+    "trailingComma": "all"
   }
 }
