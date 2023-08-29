@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "build": ". ~/.nvm/nvm.sh && nvm use 12 && webpack",
-    "start": "node server.js",
+    "start": "npm run build",
     "watch": ". ~/.nvm/nvm.sh && nvm use 12 && webpack --watch"
   },
   "dependencies": {},
