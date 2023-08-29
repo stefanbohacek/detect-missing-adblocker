@@ -9,9 +9,9 @@
     "node": ">=12 <13"
   },
   "scripts": {
-    "build": ". ~/.nvm/nvm.sh && nvm use 12 && webpack",
+    "build": "webpack",
     "start": "npm run build",
-    "watch": ". ~/.nvm/nvm.sh && nvm use 12 && webpack --watch"
+    "watch": "webpack --watch"
   },
   "dependencies": {},
   "devDependencies": {
