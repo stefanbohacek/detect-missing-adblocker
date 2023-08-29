@@ -1,14 +1,15 @@
 {
   "name": "ftf-detect-missing-adblocker",
   "version": "1.0.0",
+  "author": "Stefan Bohacek",
   "description": "Warn your website's visitors if they don't have an ad-blocking browser extension installed.",
+  "license": "ISC",
   "scripts": {
-    "start": "node server.js",
     "build": ". ~/.nvm/nvm.sh && nvm use 12 && webpack",
+    "start": "node server.js",
     "watch": ". ~/.nvm/nvm.sh && nvm use 12 && webpack --watch"
   },
-  "author": "Stefan Bohacek",
-  "license": "ISC",
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
