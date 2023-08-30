@@ -56,3 +56,6 @@ Yes, you can update the title and the message in the plugin's settings. Be sure 
 
 = 1.1.3 =
 * Added missing files.
+
+= 1.1.4 =
+* Reorganized the main JS script.

@@ -8,17 +8,19 @@ const ready = (fn) => {
 
 ready(() => {
   const cookieNameValue = "ftf-dma-notice=shown";
+  const note = document.getElementById("ftf-dma-note");
+  const noteCloseButton = document.getElementById("ftf-dma-close-btn");
+
+  if (note !== null && noteCloseButton !== null) {
+    noteCloseButton.onclick = (ev) => {
+      note.classList.add('d-none');
+      document.cookie = cookieNameValue;
+    };  
+  }
 
   if (document.cookie.indexOf(cookieNameValue) === -1) {
-    const note = document.getElementById("ftf-dma-note");
-
     if (note !== null) {
       note.classList.remove('d-none');
-
-      document.getElementById("ftf-dma-close-btn").onclick = (ev) => {
-        note.classList.add('d-none');
-        document.cookie = cookieNameValue;
-      };
     }
   }
 });
