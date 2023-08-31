@@ -23,6 +23,10 @@ Provide a more secure experience to your website's visitors by notifying them if
 
 Yes, you can update the title and the message in the plugin's settings. Be sure to include some recommended plugins!
 
+= I use an ad-blocker, why do I still see the note? =
+
+Please see if there is [an existing ticket](https://github.com/stefanbohacek/detect-missing-adblocker/issues?q=is%3Aopen+label%3Aad-detection+sort%3Aupdated-desc) addressing your particular situation. If not, feel free to [open a new issue](https://github.com/stefanbohacek/detect-missing-adblocker/issues/new), or [reach out and let me know](https://stefanbohacek.com/contact/).
+
 == Screenshots ==
 
 1. Plugin settings.
