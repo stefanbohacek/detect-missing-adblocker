@@ -62,3 +62,6 @@ Yes, you can update the title and the message in the plugin's settings. Be sure 
 
 = 1.1.5 =
 * Updated ad detection.
+
+= 1.1.6 =
+* Updated ad detection.
