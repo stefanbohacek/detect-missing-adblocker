@@ -59,3 +59,6 @@ Yes, you can update the title and the message in the plugin's settings. Be sure 
 
 = 1.1.4 =
 * Reorganized the main JS script.
+
+= 1.1.5 =
+* Updated ad detection.
