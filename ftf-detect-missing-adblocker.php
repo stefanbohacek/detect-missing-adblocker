@@ -20,9 +20,12 @@ class FTF_Detect_Missing_Adblocker {
 
   function enqueue_scripts_and_styles(){
     $js_file_path = plugin_dir_path( __FILE__ ) . 'dist/js/detect.js';
-    wp_register_script( 'ftf-dma-detect-script', plugin_dir_url( __FILE__ ) . 'dist/js/detect.js', array(), filemtime( $js_file_path ));
-    wp_enqueue_script( 'ftf-dma-detect-script' );
+    wp_register_script( 'ftf-dma-detect-script', plugin_dir_url( __FILE__ ) . 'dist/js/detect.js', array(), filemtime( $js_file_path ), array(
+      'in_footer' => true,
+      'strategy'  => 'defer',
+    ));
 
+    wp_enqueue_script( 'ftf-dma-detect-script' );
     $style = get_option( 'ftf_detect_missing_adblocker_style', 'basic' );
 
     if ( empty( $style ) || $style === 'basic' ){

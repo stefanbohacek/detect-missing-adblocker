@@ -69,3 +69,6 @@ Please see if there is [an existing ticket](https://github.com/stefanbohacek/det
 
 = 1.1.6 =
 * Updated ad detection.
+
+= 1.1.7 =
+* Defer the plugin JS script.
