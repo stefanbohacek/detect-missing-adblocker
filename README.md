@@ -2,6 +2,10 @@
 
 # Detect Missing Ad-blocker
 
+Warn your website's visitors if they don't have an ad-blocking plugin installed.
+
+[More about the project](https://stefanbohacek.com/project/detect-missing-adblocker-wordpress-plugin/)
+
 ## Development
 
 1. Install dependencies with `npm install`.
