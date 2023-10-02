@@ -2,7 +2,7 @@
 /*
     Plugin Name: Detect Missing Adblocker
     Description: Warn your website's visitors if they don't have an ad-blocker enabled.
-    Version:     1.1.8
+    Version:     1.1.9
     Author:      Stefan Bohacek
 */
 
@@ -39,15 +39,19 @@ class FTF_Detect_Missing_Adblocker {
     wp_enqueue_style( 'ftf-dma-nativeads-styles' );
   }
 
-  function show_note(){ ?>
-    <style>
-      @media (pointer:none), (pointer:coarse) {
-        .ftf-dma-note {
-            display: none !important;
+  function show_note(){
+    $show_on_mobile = get_option( 'ftf_detect_missing_adblocker_show_on_mobile' );
+
+    if ( !$show_on_mobile ){ ?>
+      <style>
+        @media (pointer:none), (pointer:coarse) {
+          .ftf-dma-note {
+              display: none !important;
+          }
         }
-      }
-    </style>
-  <?php
+      </style>
+    <?php }
+   
     $is_mobile = wp_is_mobile();
 
     if ( $is_mobile ){

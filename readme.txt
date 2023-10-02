@@ -75,3 +75,6 @@ Please see if there is [an existing ticket](https://github.com/stefanbohacek/det
 
 = 1.1.8 =
 * Fixed notice appearing on mobile when disabled on sites that use heavy caching.
+
+= 1.1.9 =
+* Fixed error in previous update affecting displaying of the notice on mobile.
