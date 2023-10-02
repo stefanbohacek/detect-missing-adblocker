@@ -72,3 +72,6 @@ Please see if there is [an existing ticket](https://github.com/stefanbohacek/det
 
 = 1.1.7 =
 * Defer the plugin JS script.
+
+= 1.1.8 =
+* Fixed notice appearing on mobile when disabled on sites that use heavy caching.
