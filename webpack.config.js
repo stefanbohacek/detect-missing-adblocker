@@ -1,15 +1,15 @@
-const path = require( 'path' );
+const path = require('path');
 
 module.exports = {
   mode: 'production',
   entry: {
     detect: './src/scripts/detect.js',
     styles: './src/styles/styles.scss',
-    adstyles: './src/styles/nativeads.js.scss'
+    adstyles: './src/styles/nativeads.js.scss',
   },
   output: {
-    path: path.resolve( __dirname, 'dist/js' ),
-    filename: '[name].js'
+    path: path.resolve(__dirname, 'dist/js'),
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -19,10 +19,10 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env']
-            }
-          }
-        ]
+              presets: ['@babel/preset-env'],
+            },
+          },
+        ],
       },
       {
         test: /\.scss$/,
@@ -34,21 +34,21 @@ module.exports = {
               sassOptions: {
                 style: 'compressed',
                 // indentWidth: 4,
-                includePaths: ['src/styles']
-              }
-            }
+                includePaths: ['src/styles'],
+              },
+            },
           },
           {
-            loader: 'extract-loader'
+            loader: 'extract-loader',
           },
           {
-            loader: 'css-loader?-url'
+            loader: 'css-loader?-url',
           },
           {
-            loader: 'sass-loader'
-          }          
-        ]
-      }
-    ]
+            loader: 'sass-loader',
+          },
+        ],
+      },
+    ],
   },
 };
