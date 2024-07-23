@@ -3,7 +3,7 @@ Contributors: fourtonfish
 Donate link: https://paypal.me/stefanbohacek
 Tags: adblock, ads
 Requires at least: 4.7
-Tested up to: 6.3.0
+Tested up to: 6.6
 Stable tag: trunk
 Requires PHP: 7.0
 License: GPLv3
