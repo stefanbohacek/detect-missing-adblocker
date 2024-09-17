@@ -1,41 +1,41 @@
-.ftf-dma-note{
-  position: fixed;
-  bottom: 5px;
-  left: 5px;
-  right: 5px;
-  z-index: 9999999;
-  padding: 0 20px 0;
-  text-align: start;
+.ftf-dma-note {
   background: #fff;
-  color: #3a3a3a;
   border: 5px solid #3a3a3a;
+  bottom: 5px;
+  color: #3a3a3a;
+  left: 5px;
+  padding: 0 20px;
+  position: fixed;
+  right: 5px;
+  text-align: start;
+  z-index: 9999999;
 
   // @media (pointer:none), (pointer:coarse) {
   //   display: none !important;
   // }
 }
 
-.ftf-dma-note-content-wrapper{
+.ftf-dma-note-content-wrapper {
   position: relative;
 }
 
-.ftf-dma-note-header{
-  margin-top: 1rem;
+.ftf-dma-note-header {
   font-size: 1.3rem;
   font-weight: bold;
+  margin-top: 1rem;
 }
 
-.ftf-dma-close-btn{
-  position: absolute;
-  top: 0;
-  right: 0;
+.ftf-dma-close-btn {
   cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-.ftf-dma-close-btn:hover{
+.ftf-dma-close-btn:hover {
   text-decoration: underline;
 }
 
-#ftf-dma-note.d-none{
+#ftf-dma-note.d-none {
   display: none !important;
 }

@@ -1,27 +1,86 @@
 {
   "name": "ftf-detect-missing-adblocker",
-  "version": "1.0.0",
-  "description": "Warn your website's visitors if they don't have an ad-blocking browser extension installed.",
-  "main": "index.js",
-  "scripts": {
-    "start": "node server.js",
-    "build": ". ~/.nvm/nvm.sh && nvm use 12 && webpack",
-    "watch": ". ~/.nvm/nvm.sh && nvm use 12 && webpack --watch"
-  },
+  "version": "1.1.2",
   "author": "Stefan Bohacek",
+  "description": "Warn your website's visitors if they don't have an ad-blocking browser extension installed.",
   "license": "ISC",
+  "private": true,
+  "engines": {
+    "node": "<=18.17.1 >16",
+    "npm": ">=9"
+  },
+  "keywords": [
+    "adblock",
+    "ads"
+  ],
+  "contributors": [
+    "fourtonfish"
+  ],
+  "homepage": "https://stefanbohacek.com/project/detect-missing-adblocker-wordpress-plugin/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefanbohacek/detect-missing-adblocker"
+  },
+  "bugs": {
+    "url": "https://github.com/stefanbohacek/detect-missing-adblocker/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://paypal.me/stefanbohacek"
+  },
+  "scripts": {
+    "build": "webpack",
+    "format": "run-s format:*",
+    "format:prettier": "prettier --write .",
+    "format:style": "stylelint \"src/**/*.scss\" --fix",
+    "lint": "run-s lint:*",
+    "lint:prettier": "prettier --check .",
+    "lint:style": "stylelint \"src/**/*.scss\"",
+    "release": "commit-and-tag-version",
+    "start": "npm run build",
+    "watch": "webpack --watch"
+  },
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@commitlint/format": "^17.4.4",
     "autoprefixer": "^9.8.0",
     "babel-loader": "^8.1.0",
+    "commit-and-tag-version": "^11.2.3",
     "css-loader": "^3.5.3",
-    "extract-loader": "^5.1.0",
+    "extract-loader": "^4.0.3",
     "file-loader": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-order": "^6.0.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard-scss",
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+      "order/properties-alphabetical-order": true
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "arrowParens": "avoid",
+    "trailingComma": "all"
+  },
+  "commit-and-tag-version": {
+    "scripts": {
+      "postchangelog": "npm run format:prettier"
+    }
   }
 }

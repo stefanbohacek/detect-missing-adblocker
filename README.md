@@ -1,6 +1,6 @@
 ![Missing ad-blocker plugin thumbnail](./assets/banner-1544x500.png)
 
-# Detect Missing Ad-blocker
+# Detect Missing Adblocker
 
 Warn your website's visitors if they don't have an ad-blocking plugin installed.
 
