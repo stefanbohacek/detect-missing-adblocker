@@ -34,47 +34,50 @@ Please see if there is [an existing ticket](https://github.com/stefanbohacek/det
 
 == Changelog ==
 
-= 1.0 =
-* Initial release.
+= 1.1.10 =
+* Updated the plugin behavior to avoid the warning flashing on page load.
 
-= 1.0.1 =
+= 1.1.9 =
+* Fixed error in previous update affecting displaying of the notice on mobile.
+
+= 1.1.8 =
+* Fixed notice appearing on mobile when disabled on sites that use heavy caching.
+
+= 1.1.7 =
+* Defer the plugin JS script.
+
+= 1.1.6 =
+* Updated ad detection.
+
+= 1.1.5 =
+* Updated ad detection.
+
+= 1.1.4 =
+* Reorganized the main JS script.
+
+= 1.1.3 =
+* Added missing files.
+
+= 1.1.2 =
+* Fixed pointer-events value.
+
+= 1.1.1 =
+* Updated ad detection.
+
+= 1.1.0 =
+* Allow full customization of the message shown to site visitors.
+
+= 1.0.4 =
+* Minor style updates.
+
+= 1.0.3 =
 * Updated ad detection.
 
 = 1.0.2 =
 * Updated ad detection.
 
-= 1.0.3 =
+= 1.0.1 =
 * Updated ad detection.
 
-= 1.0.4 =
-* Minor style updates.
-
-= 1.1.0 =
-* Allow full customization of the message shown to site visitors.
-
-= 1.1.1 =
-* Updated ad detection.
-
-= 1.1.2 =
-* Fixed pointer-events value.
-
-= 1.1.3 =
-* Added missing files.
-
-= 1.1.4 =
-* Reorganized the main JS script.
-
-= 1.1.5 =
-* Updated ad detection.
-
-= 1.1.6 =
-* Updated ad detection.
-
-= 1.1.7 =
-* Defer the plugin JS script.
-
-= 1.1.8 =
-* Fixed notice appearing on mobile when disabled on sites that use heavy caching.
-
-= 1.1.9 =
-* Fixed error in previous update affecting displaying of the notice on mobile.
+= 1.0 =
+* Initial release.
