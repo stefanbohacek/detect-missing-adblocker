@@ -2,7 +2,7 @@
 
 # Detect Missing Ad-blocker
 
-Warn your website's visitors if they don't have an ad-blocking plugin installed.
+Warn your website's visitors if they don't have an ad-blocking plugin installed. Note that DNS-based ad-blockers are [not currently being detected](https://github.com/stefanbohacek/detect-missing-adblocker/issues/20).
 
 [More about the project](https://stefanbohacek.com/project/detect-missing-adblocker-wordpress-plugin/)
 
