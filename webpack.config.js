@@ -3,7 +3,7 @@ const path = require( 'path' );
 module.exports = {
   mode: 'production',
   entry: {
-    detect: './src/scripts/detect.js',
+    dfp: './src/scripts/dfp.js',
     styles: './src/styles/styles.scss',
     adstyles: './src/styles/nativeads.js.scss'
   },
