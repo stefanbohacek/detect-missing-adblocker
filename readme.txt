@@ -34,6 +34,9 @@ Please see if there is [an existing ticket](https://github.com/stefanbohacek/det
 
 == Changelog ==
 
+= 1.1.12 =
+* Fix for detecting Adblock Plus.
+
 = 1.1.11 =
 * Fix for detecting uBlock Lite.
 
